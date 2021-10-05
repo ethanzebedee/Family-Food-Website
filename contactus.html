@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Contact Us</title>
+    <meta name="Page Description" content="Fine Dining for Lunch and Dinner South County Dublin.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="Menu">
+    <meta property="og:description" content="Fine Dining for Lunch and Dinner South County Dublin.">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:image:alt" content="Restaurant Logo">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;300&display=swap" rel="stylesheet">
+
+    <script>
+        function initMap() {
+            // The location of UCD
+            const markerLoc = { lat: -53.3067494, lng: -6.2232223 };
+            // The map, centered at UCD
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: markerLoc,
+            });
+            // The marker, positioned at UCD
+            const marker = new google.maps.Marker({
+                animation: google.maps.Animation.DROP, //Drop animation when map initialises
+                position: markerLoc,
+                map: map,
+            });
+
+            marker.addListener("click", toggleBounce);
+        }
+
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) { //if already bouncing, stop bouncing
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE); //bounce animation
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="super">
+        <div class="nav">
+            <img src="img/logo.png">
+            <ul>
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="OurStory.html"> Our Story </a></li>
+                <li><a href="menu.html"> Menu </a></li>
+                <li><a href="bookatable.html"> Book a table </a></li>
+                <li><a href="contactus.html"> Contact Us </a></li>
+            </ul>
+        </div>
+
+        <div id="map"></div>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBGpejIkZcy6zz4xgWFWDMmwnlytQ9JsI&callback=initMap&libraries=&v=weekly"
+            async>
+            </script>
+
+        <ul class="contactus">
+            <li> Contact Us: </li>
+            <li> 123 456 789 </li>
+            <li> info@fakemail.com </li>
+            <li> University College Dublin, Belfield, Dublin 4 </li>
+        </ul>
+    </div>
+    <footer>
+        <span class="credit">
+            Designed by&nbsp;
+            <a href="https://github.com/ethanzebedee">Ethan Hammond</a>
+        </span>
+    </footer>
+</body>
+
+</html>
